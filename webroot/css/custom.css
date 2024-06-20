@@ -145,3 +145,70 @@ dl, ol, ul {
 .receve {
     background-color: #61b6d9;
 }
+
+.pipeline-large-loader-container {
+
+    -webkit-clip-path: circle(0);
+    clip-path: circle(0);
+    pointer-events: none;
+    opacity: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* background-color: rgba(255, 255, 255, 0.4); */
+
+    background-color: rgba(255, 255, 255, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s;
+}
+
+.pipeline-large-loader-container.display {
+
+    -webkit-clip-path: initial;
+    clip-path: initial;
+    pointer-events: auto;
+    opacity: 1;
+    z-index: 10000;
+}
+
+.loading-spinner {
+
+    width: 54px;
+    min-width: 54px;
+    height: 54px;
+    min-height: 54px;
+
+    /* border: 4px solid rgba(255, 255, 255, 0.3); */
+
+    /* border: 6px solid rgba(97, 73, 237, 0.2); */
+
+    /* border: 7px solid rgba(97, 73, 237, 0.15); */
+
+    /* border: 6px solid rgba(97, 73, 237, 0.15); */
+
+    /* border: 8px solid #E3E1FA; */
+
+    border: 8px solid #e7e3fc;
+
+    border-top-color: var(--purple-color);
+    border-radius: 50%;
+
+    animation: spin 1s infinite ease-in-out;
+
+}
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}

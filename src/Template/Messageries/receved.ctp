@@ -104,6 +104,10 @@ $this->end();
     </div>
 </div>
 
+<div class="pipeline-large-loader-container">
+    <div class="loading-spinner"></div>
+</div>
+
 <script>
 var csrfToken = <?= json_encode($this->request->getParam('_csrfToken')) ?>;
 </script>
