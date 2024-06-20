@@ -38,7 +38,7 @@ class MessageriesController extends AppController
     {
         $options = $this->request->getQuery();
         $options['type'] = 'sent';
-        $messageries = $this->Messageries->find('complet', $options)->contain(['ExcelImporteds', 'Users'])->order(['Messageries.id' => 'DESC']);
+        $messageries = $this->Messageries->find('filter', $options)->contain(['ExcelImporteds', 'Users'])->order(['Messageries.id' => 'DESC']);
         if ($isEnvoye) {
             $messageries->where(['Messageries.status' => 'envoye']);
         } else {
@@ -61,10 +61,10 @@ class MessageriesController extends AppController
     public function receved()
     {
         $options = $this->request->getQuery();
-        $options['type'] = 'receve';
-        $messageries = $this->Messageries->find('complet', $options)->order(['Messageries.id' => 'DESC']);
+        $options['type'] = "receve";
+        $messageries = $this->Messageries->find('filter', $options)->order(['Messageries.id' => 'DESC']);
         $messageries = $this->paginate($messageries);
-        $status = Configure::read('message_status');
+        $status = Configure::read('message_status_receved');
         $users  = $this->Messageries->Users->find('list');
 
         $this->set(compact('messageries', 'status', 'options', 'users'));

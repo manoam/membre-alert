@@ -42,6 +42,10 @@ $this->end();
                             <div class="filter-block container_date_threshold">
                                 <?= $this->Form->control('date_threshold', ['type' => 'text', 'label' => false, 'value' => @$options['date_threshold'], 'class' => 'form-control date_threshold', 'id' => 'id_date_threshold']); ?>
                             </div>
+
+                            <div class="filter-block container_date_threshold">
+                                <?= $this->Form->control('status', ['type' => 'select', 'label' => false, 'options' => $status, 'value' => @$options['status'], 'class' => 'form-control', 'class' => 'select2', 'data-placeholder' => 'Etat', 'empty' => 'Etat', 'style' => 'width:100%']); ?>
+                            </div>
                             
                             <div class="filter-block col-filter">
                                 <?= $this->Form->button('<i class="fa fa-search"></i> Filtrer', ['label' => false, 'class' => 'btn btn-outline-primary'] );?>
@@ -57,6 +61,7 @@ $this->end();
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expediteur</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Message</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">Statut</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                             </tr>
                         </thead>
@@ -79,6 +84,9 @@ $this->end();
 
                                     <td class="align-middle">
                                         <span class="text-xs font-weight-bold"> <?= $messagery->message ?> </span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="badge badge-sm badge-<?= $messagery->status ?>"><?= @$status[$messagery->status] ?></span>
                                     </td>
                                     <td class="align-middle text-center text-sm text-nowrap">
                                         <?= $messagery->created->format('d/m/Y à H:i') ?>

@@ -81,7 +81,7 @@ class MessageriesTable extends Table
         return $validator;
     }
     
-    public function findComplet(Query $query, $options = []) 
+    public function findfilter(Query $query, $options = []) 
     {
         $destinataire = ! empty($options['destinataire']) ? $options['destinataire'] : null;
         if ($destinataire) {
@@ -105,7 +105,7 @@ class MessageriesTable extends Table
         
         $type = ! empty($options['type']) ? $options['type'] : null;
         if ($type) {
-            $query->where(['Messageries.type' => $status]);
+            $query->where(['Messageries.type' => $type]);
         }
 
         return $query;
