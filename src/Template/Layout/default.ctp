@@ -80,7 +80,7 @@
                             <div class="nav-wrapper position-relative end-0">
                                 <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                                        <a class="nav-link mb-0 px-0 py-1 active modem-status" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
                                             <?php if ($isOnlineModem) : ?>
                                             <i class="fa fa-check" style="font-size:15px;color:green"></i>
                                             <span class="ms-1">Connecté</span>
@@ -206,6 +206,7 @@
 
         <?= $this->fetch('script') ?>
         <?= $this->Html->script('custom.js?' . time()) ?>
+        <?= $this->Html->script('general.js?' . time()) ?>
     </body>
 
 </html>

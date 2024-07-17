@@ -206,24 +206,43 @@ class MessageriesController extends AppController
      */
     function readMessage() 
     {
-        $messages = $this->Modem->smsread();
-        
-        foreach ($messages->Message as $message) {
-            $message->Index;
-            
-            $dataMessage = [
-                'excel_imported_id' => null,
-                'message'           => $message->message,
-            ];
+        /**
+         * Pour blocker la 2em lecture lors d'une lecture.
+         */
+        if ( ! $this->request->getSession()->read('read_message')) {
+            $this->request->getSession()->write('read_message', true);
+            $messages = $this->Modem->smsread();
 
-            $messagery = $this->Messageries->newEntity($dataMessage);
-            if ($this->Messageries->save($messagery)) {
-                
-                $this->Modem->smsdelete($messagery->Index);
+            foreach ($messages->Message as $message) {
+                $message->Index;
+
+                $dataMessage = [
+                    'excel_imported_id' => null,
+                    'message'           => $message->message,
+                ];
+
+                $messagery = $this->Messageries->newEntity($dataMessage);
+                if ($this->Messageries->save($messagery)) {
+
+                    $this->Modem->smsdelete($messagery->Index);
+                }
+
             }
             
+            $this->request->getSession()->delete('read_message');
         }
+        
+        return $this->response->withType('application/json')->withStringBody(json_encode(['status' => 1]));
         
     }
     
+    /**
+     * Checker le statut du modem et afficher sur la page si connecter ou non.
+     * 
+     * @return type
+     */
+    public function checkModem() 
+    {
+        return $this->response->withType('application/json')->withStringBody(json_encode(['status' => $this->Modem->GSMNetwork()]));
+    }
 }

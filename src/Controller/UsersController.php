@@ -22,6 +22,9 @@ class UsersController extends AppController {
      */
     public function isAuthorized($user)
     {
+        if ($user) {
+            return true;
+        }
         return parent::isAuthorized($user);
     }
     
@@ -116,6 +119,12 @@ class UsersController extends AppController {
 
     public function login() 
     {
+        
+        if ($this->currentUser()) {
+            
+            $this->redirecting();
+        } 
+        
         $this->viewBuilder()->setLayout('login');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
@@ -138,7 +147,7 @@ class UsersController extends AppController {
             return $this->redirect($default);
         }
 
-        return $this->redirect('/');
+        return $this->redirect(['controller' => 'ExcelImporteds', 'action' => 'index']);
     }
     
 
