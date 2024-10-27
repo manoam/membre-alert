@@ -55,6 +55,7 @@ define('CONFIG', ROOT . DS . 'config' . DS);
  */
 define('WWW_ROOT', ROOT . DS . 'webroot' . DS);
 define('PATH_EXCEL', WWW_ROOT . 'excels'. DS);
+define('PATH_PHOTO_USER', WWW_ROOT . 'img'. DS . 'users');
 
 /**
  * Path to the tests directory.

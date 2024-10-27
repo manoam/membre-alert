@@ -2,6 +2,8 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\Auth\DefaultPasswordHasher;
+use Cake\Routing\Router;
 
 /**
  * User Entity
@@ -17,7 +19,7 @@ use Cake\ORM\Entity;
 class User extends Entity
 {
     
-    protected $_virtual = ['full_name'];
+    protected $_virtual = ['full_name', 'url_photo'];
     
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -56,4 +58,17 @@ class User extends Entity
     protected function _getFullName() {
         return $this->nom . ' ' . $this->prenom;
     }
+    
+    
+    protected function _getUrlPhoto()
+    {
+        $url = Router::url('/', true)."img/users/default_photo_user.jpg";
+        $filename = $this->photo_nom;
+
+        if (!empty($filename) && file_exists(PATH_PHOTO_USER . $filename)) {
+            $url = Router::url('/', true)."uploads/contacts/".$filename;
+        }
+        return $url;
+    }
+
 }
