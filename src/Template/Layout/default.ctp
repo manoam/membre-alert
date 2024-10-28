@@ -14,7 +14,6 @@
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <!--     Fonts and icons     -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
         <!-- Nucleo Icons -->
         <?= $this->Html->css('css/all.min.css') ?>
         <?= $this->Html->css('nucleo-icons.css') ?>
