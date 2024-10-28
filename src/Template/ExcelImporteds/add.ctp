@@ -32,15 +32,8 @@ $this->end();
             <div class="card-body p-3">
                 <p class="text-sm">
                     Cette interface permet aux utilisateurs d'importer des listes de destinataires à partir de fichiers Excel tout en configurant les messages à envoyer. 
-                    Vous pouvez personnaliser votre message en incluant les variables suivantes
+                    Vous pouvez personnaliser votre message.
                 </p>
-                <hr class="horizontal gray-light my-4">
-                <ul class="list-group">
-                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nom</strong> &nbsp;#name</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Téléphone:</strong> &nbsp; #number</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Somme à payer:</strong> &nbsp; #montant/li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Date d'échéance:</strong> &nbsp; #date</li>
-                </ul>
             </div>
         </div>
     </div>
@@ -65,8 +58,8 @@ $this->end();
                             </div>
                             <div class="position-relative mb-4">
                                 <div class="form-floating">
-                                    <textarea class="form-control" name="nom" placeholder="Objet du message" id="floatingTextarea"></textarea>
-                                    <label for="floatingTextarea">Objet du message</label>
+                                    <input class="form-control" name="nom" id="formFileNom" type="text" placeholder="Objet du message" aria-label="Objet du message" />
+                                    <label for="formFileNom">Objet du message</label>
                                 </div>
                             </div>
                             <div class="position-relative">

@@ -63,7 +63,7 @@
                     <div class="row gx-4">
                         <div class="col-auto">
                             <div class="avatar avatar-xl position-relative">
-                                <?= $this->Html->image('bruce-mars.jpg', ['alt' => 'profile_image', "class" => "w-100 border-radius-lg shadow-sm"]); ?>
+                                <?= $this->Html->image($userConnected->url_photo, ['alt' => 'profile_image', "class" => "w-100 border-radius-lg shadow-sm"]); ?>
                             </div>
                         </div>
                         <div class="col-auto my-auto">
