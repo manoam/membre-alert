@@ -71,9 +71,9 @@ class ExcelImportedsController extends AppController {
         if ($this->request->is('post')) {
 
             $data = $this->request->getData();
-            debug($data);die;
             $newName = $this->uploadFile($data["excel"], ['xlsx'], PATH_EXCEL);
 
+            debug($newName);
             if ($newName) {
 
                 $data['nombre_ligne'] = $this->SpreadSheet->countLigne(PATH_EXCEL . $newName);
@@ -87,8 +87,9 @@ class ExcelImportedsController extends AppController {
 
                     return $this->redirect(['action' => 'importAndSendSms', $excelImported->id]);
                 }
+                debug($excelImported->getErrors());
             }
-
+            die;
             $this->Flash->error("L'import excel n'a pas pu sauvegardé, Veuillez reessayer svp.");
         }
         $this->set(compact('excelImported'));
