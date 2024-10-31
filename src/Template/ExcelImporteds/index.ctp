@@ -32,6 +32,7 @@ $this->end();
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expediteur</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Option(s)</th>
                             </tr>
                         </thead>
 
@@ -67,6 +68,9 @@ $this->end();
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <span class="badge badge-sm badge-<?= $excelImported->status ?>"><?= @$status[$excelImported->status] ?></span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <?= $this->Html->link('Réenvoyer',['action'=>'importAndSendSms', $excelImported->id],['escape'=>false,"class"=>"btn btn-rounded pull-right btn-sm btn-success" ]); ?>
                                     </td>
                                 </tr>
 

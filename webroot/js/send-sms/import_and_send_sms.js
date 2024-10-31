@@ -20,7 +20,7 @@ function importAndSendSms(idExcel, ligne) {
                 $('.message').text(data.message);
             }
             
-            if (ligne <= nombre_ligne) {
+            if (ligne <= nombre_ligne + 1) {
                 
                 importAndSendSms(idExcel, ligne+1);
             } else {

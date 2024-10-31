@@ -4049,9 +4049,10 @@ fieldset:disabled .btn {
 
 .btn-sm,
 .btn-group-sm>.btn {
-  --bs-btn-padding-y: 0.5rem;
-  --bs-btn-padding-x: 2rem;
-  --bs-btn-border-radius: 0.5rem;
+    --bs-btn-padding-y: 0.15rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-border-radius: 0.5rem;
+    --bs-btn-font-size: 15px;
 }
 
 .fade {
