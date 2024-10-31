@@ -140,6 +140,9 @@ dl, ol, ul {
 
 .sent {
     background-color: #61b6d9;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
 }
 
 .receve {

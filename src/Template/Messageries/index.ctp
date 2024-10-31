@@ -18,15 +18,11 @@ $this->end();
 <div class="row my-4">
     <div class="col-lg-12 col-md-12 mb-md-0 mb-4">
         <div class="card">
-            <div class="card-header pb-0">
-                <div class="row">
-                    <div class="col-lg-6 col-7">
-                        <h6>Message de campagne</h6>
-                    </div>
-                </div>
-            </div>
             <div class="card-body px-0 pb-2">
                 
+                <div class="d-block">
+                    <h5>Message de campagne</h5>
+                </div>
                 
                 <div class="d-block">
                     <?= $this->Form->create(false, ['type' => 'GET', 'class' => 'form-filtre mt-4']); ?>
@@ -93,10 +89,10 @@ $this->end();
                                     </td>
 
                                     <td class="align-middle">
-                                        <span class="text-xs font-weight-bold"> <?= $messagery->message ?> </span>
+                                        <span class="text-xs"> <?= $messagery->message ?> </span>
                                     </td>
                                     <td class="align-middle text-sm">
-                                        <span class="text-xs font-weight-bold"> <?= $messagery->excel_imported ? $messagery->excel_imported->nom : '--' ?> </span>
+                                        <?= $messagery->excel_imported ? $messagery->excel_imported->nom : '--' ?>
                                     </td>
                                     <td class="align-middle">
                                         <?php if ($messagery->user) : ?>

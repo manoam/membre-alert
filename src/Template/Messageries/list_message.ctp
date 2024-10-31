@@ -8,10 +8,8 @@
             <i class="fa fa-warning" style="font-size:15px;color:red"></i>
         <?php endif; ?>
     </h6>
-    <div class="card card-frame">
-        <div class="card-body <?= $message->type ?>">
-            <?= $message->message ?>
-        </div>
+    <div class="<?= $message->type ?>">
+        <?= $message->message ?>
     </div>
 </div>
 <?php endforeach; ?>

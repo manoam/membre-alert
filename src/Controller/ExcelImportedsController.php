@@ -71,6 +71,7 @@ class ExcelImportedsController extends AppController {
         if ($this->request->is('post')) {
 
             $data = $this->request->getData();
+            debug($data);die;
             $newName = $this->uploadFile($data["excel"], ['xlsx'], PATH_EXCEL);
 
             if ($newName) {

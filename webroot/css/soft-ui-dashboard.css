@@ -67,7 +67,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 103, 116, 142;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: Open Sans;
+  --bs-font-sans-serif: "Rubik", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -3613,10 +3613,10 @@ textarea.form-control.is-invalid {
 
 .btn {
   --bs-btn-padding-x: 1.5rem;
-  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-padding-y: 0.45rem;
   --bs-btn-font-family: ;
-  --bs-btn-font-size: 0.75rem;
-  --bs-btn-font-weight: 700;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-weight: 500;
   --bs-btn-line-height: 1.4;
   --bs-btn-color: #67748e;
   --bs-btn-bg: transparent;
@@ -4051,7 +4051,6 @@ fieldset:disabled .btn {
 .btn-group-sm>.btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 2rem;
-  --bs-btn-font-size: 0.75rem;
   --bs-btn-border-radius: 0.5rem;
 }
 
@@ -20350,7 +20349,6 @@ fieldset:disabled .btn {
 .btn {
   margin-bottom: 1rem;
   letter-spacing: -0.025rem;
-  text-transform: uppercase;
   box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
   background-size: 150%;
   background-position-x: 25%;
@@ -20928,7 +20926,7 @@ fieldset:disabled .btn {
 }
 
 .card .card-body {
-  font-family: "Open Sans";
+  font-family: "Rubik", sans-serif;
   padding: 1.5rem;
 }
 
@@ -21709,7 +21707,6 @@ fieldset:disabled .btn {
 label,
 .form-label {
   font-size: 0.75rem;
-  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #344767;
   margin-left: 0.25rem;
@@ -24897,7 +24894,7 @@ h5,
 h6,
 .h6,
 .h6 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1,

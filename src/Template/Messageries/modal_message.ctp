@@ -9,7 +9,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-message" style="max-height: 550px;overflow: auto;"></div>
+                    <div class="overflow-auto" style="max-height: 550px;">
+                        <div class="modal-message"></div>
+                    </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Message:</label>
                         <textarea class="form-control" id="message-text" name="message"></textarea>
