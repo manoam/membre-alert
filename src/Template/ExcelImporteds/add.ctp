@@ -58,13 +58,13 @@ $this->end();
                             </div>
                             <div class="position-relative mb-4">
                                 <div class="form-floating">
-                                    <input class="form-control form-control-sm" name="nom" id="formFileNom" type="text" placeholder="Objet du message" aria-label="Objet du message" />
+                                    <input class="form-control form-control-sm" name="nom" id="formFileNom" type="text" placeholder="Objet du message" aria-label="Objet du message" required="required"/>
                                     <label for="formFileNom">Objet du message</label>
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div class="form-floating">
-                                    <textarea class="form-control" name="message" placeholder="Message (150 caractères max)" id="floatingTextarea"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Message (150 caractères max)" id="floatingTextarea"  required="required"></textarea>
                                     <label for="floatingTextarea">Message (150 caractères max)</label>
                                 </div>
                             </div>
