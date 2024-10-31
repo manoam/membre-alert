@@ -6,6 +6,7 @@
 /tmp/*
 /vendor/*
 config/Migrations/schema-dump-default.lock
+webroot/excels/*
 
 # OS generated files #
 ######################
