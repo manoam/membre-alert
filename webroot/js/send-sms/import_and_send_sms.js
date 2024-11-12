@@ -27,7 +27,7 @@ function importAndSendSms(idExcel, ligne, nombreError = 0) {
                         editExcelImported(idExcel, "envoyer");
                     }
                 } else {
-                    
+                    console.log(data);
                     if (nombreError < 3) {
                         importAndSendSms(idExcel, ligne, nombreError+1);
                     } else {
@@ -37,6 +37,7 @@ function importAndSendSms(idExcel, ligne, nombreError = 0) {
 
             },
             error: function (data) {
+                console.log(data);
                 if (nombreError < 3) {
                     // console.log('Erreur:', data.responseText);
                     importAndSendSms(idExcel, ligne, nombreError+1);
