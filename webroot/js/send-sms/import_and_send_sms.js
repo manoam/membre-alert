@@ -8,33 +8,48 @@ $(document).ready(function () {
     
 });
 
-function importAndSendSms(idExcel, ligne) {
-    var nombre_ligne = $('#nombre_ligne').val();
-    $.ajax({
-        url: srcUrl + 'ExcelImporteds/traitementParLigne/' + idExcel + '/' + ligne,
-        type: "GET",
-        success: function (data) {
-            if (data.succes == 1) {
-                $('.progress-percentage-span').text(data.rapport + '%');
-                $('.progress-bar').addClass('w-' + data.rapport);
-                $('.message').text(data.message);
+function importAndSendSms(idExcel, ligne, nombreError = 0) {
+    nombreError = parseInt(nombreError);
+    var nombre_ligne = parseInt($('#nombre_ligne').val());
+    setTimeout(function () {
+        $.ajax({
+            url: srcUrl + 'ExcelImporteds/traitementParLigne/' + idExcel + '/' + ligne,
+            type: "GET",
+            success: function (data) {
+                if (data.succes == 1 && data.status == "non_envoye") {
+                    $('.progress-percentage-span').text(data.rapport + '%');
+                    $('.progress-bar').addClass('w-' + data.rapport);
+                    $('.message').text(data.message);
+                    
+                    if (ligne <= nombre_ligne + 1) {
+                        importAndSendSms(idExcel, ligne+1);
+                    } else {
+                        editExcelImported(idExcel, "envoyer");
+                    }
+                } else {
+                    
+                    if (nombreError < 3) {
+                        importAndSendSms(idExcel, ligne, nombreError+1);
+                    } else {
+                        editExcelImported(idExcel, "erroner");
+                    }
+                }
+
+            },
+            error: function (data) {
+                if (nombreError < 3) {
+                    // console.log('Erreur:', data.responseText);
+                    importAndSendSms(idExcel, ligne, nombreError+1);
+                } else {
+                    editExcelImported(idExcel, "erroner");
+                }
             }
-            
-            if (ligne <= nombre_ligne + 1) {
-                
-                importAndSendSms(idExcel, ligne+1);
-            } else {
-                editExcelImported(idExcel);
-            }
-        },
-        error: function (data) {
-            console.log('Erreur:', data.responseText);
-        }
-    });
+        });
+    }, 2000);
 }
 
 
-function editExcelImported(idExcel) {
+function editExcelImported(idExcel, status) {
     $.ajax({
         headers: {
             'X-CSRF-Token': csrfToken
@@ -42,7 +57,7 @@ function editExcelImported(idExcel) {
         url: srcUrl + 'ExcelImporteds/editExcel/' + idExcel,
         type: "POST",
         data: {
-            "status":"envoyer"
+            "status":status
         },
         success: function (data) {
             window.location.href = $('#redirectUrl').val();
