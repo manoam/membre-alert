@@ -56,7 +56,7 @@
             <!-- End Navbar -->
             <!-- Barre de Menu de messages -->
             <div class="container-fluid" style="margin-top: -20px;">
-                <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('/send-sms/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+                <div class="page-header min-height-200 border-radius-xl mt-4" style="background-image: url('/send-sms/img/curved-images/curved0.jpg'); background-position-y: 50%;">
                     <span class="mask bg-gradient-primary opacity-6"></span>
                 </div>
                 <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
@@ -76,7 +76,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+                        <div class="col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                             <div class="nav-wrapper position-relative end-0">
                                 <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                                     <li class="nav-item">
@@ -91,7 +91,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                                        <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
                                             <svg class="text-dark" width="16px" height="16px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">

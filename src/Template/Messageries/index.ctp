@@ -40,7 +40,7 @@ $this->end();
                             </div>
 
                             <div class="filter-block">
-                                <?= $this->Form->control('excel_imported_id', ['options' => $excels, 'label' => false, 'default' => @$options['excel_imported_id'], 'class' => 'select2', 'data-placeholder' => 'Fichier excel', 'empty' => 'Fichier excel', 'style' => 'width:100%']); ?>
+                                <?= $this->Form->control('excel_imported_id', ['options' => $excels, 'label' => false, 'default' => @$options['excel_imported_id'], 'class' => 'select2', 'data-placeholder' => 'Campagne SMS', 'empty' => 'Campagne SMS', 'style' => 'width:100%']); ?>
                             </div>
 
                             <div class="filter-block container_date_threshold">
@@ -65,7 +65,7 @@ $this->end();
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Destinataire</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Message</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Excel</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Campagne SMS</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expediteur</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>

@@ -52,14 +52,10 @@ $this->end();
                     <div class="col-xl-12 col-md-12 mb-xl-0 mb-4">
                         <div class="card card-blog card-plain">
 
-                            <div class="col-12 mb-4">
-                                <h6 class="mb-0">Fichier excel</h6>
-                                <input class="form-control form-control-sm" name="excel" id="formFileSm" type="file" placeholder="Aucun fichier" aria-label="Aucun fichier" />
-                            </div>
                             <div class="position-relative mb-4">
                                 <div class="form-floating">
                                     <input class="form-control form-control-sm" name="nom" id="formFileNom" type="text" placeholder="Objet du message" aria-label="Objet du message" required="required"/>
-                                    <label for="formFileNom">Objet du message</label>
+                                    <label for="formFileNom">Nom du campagne</label>
                                 </div>
                             </div>
                             <div class="position-relative">
@@ -67,6 +63,10 @@ $this->end();
                                     <textarea class="form-control" name="message" placeholder="Message (150 caractères max)" id="floatingTextarea"  required="required"></textarea>
                                     <label for="floatingTextarea">Message (150 caractères max)</label>
                                 </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <h6 class="mb-0">Fichier excel contenant les destinataires</h6>
+                                <input class="form-control form-control-sm" name="excel" id="formFileSm" type="file" placeholder="Aucun fichier" aria-label="Aucun fichier" required="required"/>
                             </div>
                             <div class="card-body px-1 pb-0">
 
